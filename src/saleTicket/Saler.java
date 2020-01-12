@@ -9,33 +9,20 @@ public class Saler {
     public static void main(String[] args) {
         Ticket ticket = new Ticket();
 
-        // 这是通过传入一个runnable接口
+        // 这是通过传入一个runnable
         // runnable 通过内部类实现
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(ticket.getNumber()>0) {
-                    ticket.saleTicket();
-                }
+        new Thread(() -> {
+            while(ticket.getNumber()>0){
+                ticket.saleTicket();
+            }
+        },"saler1").start();
+
+        new Thread(() -> {
+            while(ticket.getNumber()>0){
+                ticket.saleTicket();
             }
         },"saler2").start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(ticket.getNumber()>0) {
-                    ticket.saleTicket();
-                }
-            }
-        },"saler3").start();
-
-        // java8中的新特性，借鉴了scala中的思想：
-        // 一个类（比如Runnable接口)中如果只有一个方法，那么这其实就是一个函数式接口，就直接可以用lambda表达式更加简单使用
-        new Thread(() ->{
-            while (ticket.getNumber()>0){
-                ticket.saleTicket();
-            }
-        },"saler3").start();
 
     }
 }
