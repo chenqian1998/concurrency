@@ -1,4 +1,4 @@
-package PC3;
+package 线程交互.PC3;
 
 public class PC3 {
     public static void main(String[] args) {

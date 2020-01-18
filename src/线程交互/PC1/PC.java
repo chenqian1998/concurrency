@@ -1,4 +1,4 @@
-package PC1;
+package 线程交互.PC1;
 
 public class PC {
     /*

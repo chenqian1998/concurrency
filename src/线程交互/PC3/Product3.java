@@ -1,4 +1,4 @@
-package PC3;
+package 线程交互.PC3;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

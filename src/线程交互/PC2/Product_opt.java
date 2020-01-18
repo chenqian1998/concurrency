@@ -1,4 +1,4 @@
-package PC2;
+package 线程交互.PC2;
 
 public class Product_opt {
     private int count = 0;
